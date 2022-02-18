@@ -32,7 +32,7 @@ public class SeleniumBrowserTest extends Base{
 	public void SeleniumAutomation1() throws InterruptedException, IOException, SQLException {
 
 		System.out.println("SeleniumBrowserTest - 3");
-		// Create for Excel Destination:
+		// Create for Excel Destination:...
 //		DataDrivenExcelFetchDataMethod d = new DataDrivenExcelFetchDataMethod();
 //		ArrayList<String> data = d.getData("Login"); // Getting data only from [Delete Profile] record/row.
 //		log.info("Printing the URL of landed page.");
