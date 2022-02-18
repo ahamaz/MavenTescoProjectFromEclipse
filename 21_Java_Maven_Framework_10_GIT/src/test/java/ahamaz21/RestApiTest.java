@@ -12,7 +12,7 @@ public class RestApiTest extends Base{
 	public void RESTAutomation() throws IOException
 	{
 		
-		System.out.println("RestApiTest -2");
+		System.out.println("RestApiTest -2..");
 		driver = initializeDriver(); 
 		driver.get(prop.getProperty("url"));
 		//driver.close();
