@@ -33,9 +33,7 @@ public class Base {
 	public Properties prop;	
 	
      //Step-1: For SauceLab - To Pass Values.
-	public static final String USERNAME = "ahamaz";
-	public static final String ACCESS_KEY = "cf576093-9f03-4e7e-a25f-c826450b0825";
-	public static final String URL = "http://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.eu-central-1.saucelabs.com:80/wd/hub";
+	
 	
 	
 	public WebDriver initializeDriver() throws IOException {
@@ -63,6 +61,9 @@ public class Base {
 			 {
 				 options.addArguments("headless"); //229 > use with if option to run with and without headless.
 			 }
+				// For One Browser on same PC
+			 driver= new ChromeDriver(options); // now we can use with [Webdriver] extension.
+			 
 		}
 		else if (browserName.equals("firefox")) // using [equals] instead of [==], because getting value of attribute [browser=chrome]from another file. if [==], Nullpointer error.
 		{
@@ -81,19 +82,19 @@ public class Base {
 		}
 		
 		// For One Browser on same PC
-//		 driver= new ChromeDriver(options); // now we can use with [Webdriver] extension.
+		 driver= new ChromeDriver(options); // now we can use with [Webdriver] extension.
 		 
 		// For Cross Browser Testing.
 //		 RemoteWebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/"), new ChromeOptions());// Not the PC-B Url.
 		 
 		//Working in Selenium 4, code from SauceLab.
-		ChromeOptions browserOptions = new ChromeOptions();
-		browserOptions.setPlatformName("Windows 10");
-		browserOptions.setBrowserVersion("98");
-		Map<String, Object> sauceOptions = new HashMap<>();
-        sauceOptions.put("name", "Maven SauceLab CloudTesting"); // Sending Name.
-		browserOptions.setCapability("sauce:options", sauceOptions);
-		driver=new RemoteWebDriver(new java.net.URL(URL), browserOptions);
+//		ChromeOptions browserOptions = new ChromeOptions();
+//		browserOptions.setPlatformName("Windows 10");
+//		browserOptions.setBrowserVersion("98");
+//		Map<String, Object> sauceOptions = new HashMap<>();
+//        sauceOptions.put("name", "Maven SauceLab CloudTesting"); // Sending Name.
+//		browserOptions.setCapability("sauce:options", sauceOptions);
+//		driver=new RemoteWebDriver(new java.net.URL(URL), browserOptions);
 			
 			
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // Setting time for all test cases before they fail, incase load is taking time.
