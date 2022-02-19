@@ -33,6 +33,7 @@ public class Base {
 	public Properties prop;	
 	
      //Step-1: For SauceLab - To Pass Values.
+	//Removed because of expose on git.
 	
 	
 	
@@ -81,8 +82,7 @@ public class Base {
 			 driver= new ChromeDriver(); // now we can use with [Webdriver] extension.
 		}
 		
-		// For One Browser on same PC
-		 driver= new ChromeDriver(options); // now we can use with [Webdriver] extension.
+
 		 
 		// For Cross Browser Testing.
 //		 RemoteWebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/"), new ChromeOptions());// Not the PC-B Url.
